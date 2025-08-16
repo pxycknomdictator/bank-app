@@ -9,6 +9,9 @@ interface UserSchema extends Document {
 	email: string;
 	password: string;
 	dob: Date;
+	avatar?: string;
+	avatarId?: string;
+	avatarType?: string;
 	cnicNumber: string;
 	cnicExpiry: Date;
 	verified: boolean;
@@ -47,6 +50,18 @@ const userSchema = new mongoose.Schema<UserSchema>(
 			type: Date,
 			select: false,
 			required: [true, "date-of-birth is required"]
+		},
+		avatar: {
+			type: String,
+			required: false
+		},
+		avatarId: {
+			type: String,
+			required: false
+		},
+		avatarType: {
+			type: String,
+			required: false
 		},
 		cnicNumber: {
 			type: String,
