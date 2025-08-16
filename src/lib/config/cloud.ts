@@ -30,7 +30,7 @@ export class CloudManager {
 				link: res.secure_url
 			};
 		} catch (error: any) {
-			logger.error(`Cloudinary upload failed: ${error.message}`);
+			logger.error(`cloudinary upload failed: ${error.message}`);
 			return { publicId: null, resourceType: null, link: null };
 		} finally {
 			await fs.unlink(location);
@@ -49,7 +49,7 @@ export class CloudManager {
 
 			return true;
 		} catch (error: any) {
-			logger.error(`Cloudinary deletion failed: ${error.message}`);
+			logger.error(`cloudinary deletion failed: ${error.message}`);
 			throw error;
 		}
 	}
